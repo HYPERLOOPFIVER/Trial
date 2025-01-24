@@ -1,0 +1,90 @@
+/* Global Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #1e2a78; /* Dark Blue */
+  --secondary-color: #9e003f; /* Red */
+  --accent-color: #ffcb05; /* Premium Gold */
+  --text-color: #ffffff;
+  --font-family: 'Inter', sans-serif;
+  --loader-color: #ffcb05;
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.splash-screen.active {
+  opacity: 1;
+}
+
+.splash-screen:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-content {
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.splash-content .logo h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px var(--accent-color);
+}
+
+.splash-content .logo h1 span {
+  color: var(--accent-color);
+  text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color);
+}
+
+/* Bar Loader Styling */
+.loader {
+  width: 60%;
+  height: 8px;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background: var(--loader-color);
+  animation: loadBar 2.5s ease-in-out infinite;
+}
+
+@keyframes loadBar {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 50%;
+    width: 25%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}

@@ -1,0 +1,305 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #06013d, #611313);
+  color: #000000;
+  overflow-x: hidden;
+  margin-bottom: 40px;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Headers and Titles */
+h2, h3, h4 {
+  color: #f0e7ff;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-logout {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+.btn-create {
+  background: linear-gradient(135deg, #34ebba, #0fc6f7);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(15, 198, 247, 0.4);
+}
+
+.btn-start, .btn-end {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #34ebba, #0fc6f7);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.btn-square {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background: linear-gradient(135deg, #f0c27b, #4b1248);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-square:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Fields */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #e0e0e0;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #0fc6f7;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Course Cards */
+.course-card, .notice-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.course-card h4 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.course-card p {
+  color: #d4d4d4;
+}
+
+.course-card a {
+  color: #34ebba;
+  text-decoration: none;
+}
+
+.course-card a:hover {
+  text-decoration: underline;
+}
+
+.notice-card {
+  border-left: 5px solid #34ebba;
+}
+
+.notice-card h4 {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.notice-card p {
+  color: #d4d4d4;
+  margin: 5px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn, input, textarea, select {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+  }
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #ffffff; /* Pure white background */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for premium look */
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content h3 {
+  font-family: 'Poppins', sans-serif; /* Premium font */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333; /* Dark gray text */
+  margin-bottom: 16px;
+}
+
+.popup-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555555; /* Medium gray text */
+  margin-bottom: 16px;
+}
+
+.popup-content button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff; /* White text */
+  background: linear-gradient(45deg, #6c63ff, #8b87ff); /* Gradient button */
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 8px;
+}
+
+.popup-content button:hover {
+  background: linear-gradient(45deg, #5a54d1, #716bdb); /* Slightly darker gradient on hover */
+}
+
+.popup-content button:nth-of-type(2) {
+  background-color: #f0f0f0; /* Light gray for cancel button */
+  color: #333333; /* Dark gray text */
+}
+
+.popup-content button:nth-of-type(2):hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Fade-in animation for popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

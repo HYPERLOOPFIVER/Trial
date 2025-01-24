@@ -1,0 +1,62 @@
+const board = ChessBoard('board', {
+    draggable: true,
+    dropOffBoard: 'trash',
+    sparePieces: true
+  });
+  
+  let game = new Chess();
+  
+  // Function to make the bot's move
+  function makeBotMove() {
+    const possibleMoves = game.ugly_moves();
+    if (possibleMoves.length === 0) return;
+  
+    const randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+    game.ugly_move(randomMove);
+    renderMoveHistory(game.history());
+    renderBoard();
+    renderMoveHistory(game.history());
+  
+    if (game.game_over()) {
+      alert("Game Over");
+    }
+  }
+  
+  // Render the game board
+  function renderBoard() {
+    board.position(game.fen());
+  }
+  
+  // Render the move history
+  function renderMoveHistory(moves) {
+    const historyElement = document.getElementById('move-history');
+    historyElement.innerHTML = moves.join(' ');
+  }
+  
+  // Initialize game
+  function initGame() {
+    game = new Chess();
+    renderBoard();
+  }
+  
+  // Button to start a new game
+  document.getElementById('startBtn').addEventListener('click', () => {
+    initGame();
+  });
+  
+  // Listen for human moves
+  board.on('move', function (oldPos, newPos) {
+    game.ugly_move({
+      from: oldPos,
+      to: newPos
+    });
+    renderMoveHistory(game.history());
+    renderBoard();
+  
+    if (!game.game_over()) {
+      setTimeout(makeBotMove, 500); // Bot makes its move after 500ms
+    } else {
+      alert("Game Over");
+    }
+  });
+  

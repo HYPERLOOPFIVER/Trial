@@ -1,0 +1,109 @@
+/* Global Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2e3192; /* Deep Blue */
+  --secondary-color: #1b1464; /* Rich Dark Blue */
+  --accent-color: #fdfcf7; /* Premium Gold */
+  --text-color: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.116);
+  --glass-border: rgba(255, 255, 255, 0);
+  --font-family: 'Inter', sans-serif;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+}
+
+/* Navbar Styling */
+.navbar {
+  backdrop-filter: blur(12px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 16px var(--shadow-color);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Back Button with Icon */
+.back-button {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Navbar Logo Styling */
+.navbar-logo {
+  text-align: center;
+  flex-grow: 1; /* Center the brand name */
+}
+
+.navbar-logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--text-color);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px var(--accent-color);
+}
+
+/* Glow Effect for Branding */
+.navbar-logo h1 span {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color), 0 0 15px var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    border-radius: 0;
+  }
+
+  .navbar-logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .back-button {
+    font-size: 1.3rem;
+  }
+}
